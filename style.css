@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+/* header  */
+
+.header {
+  padding: 20px 70px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #1e201f;
+  box-shadow: rgb(0 0 0 / 3%) 0px 2px 4px 4px;
+}
+
+.mode {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#solid-moon,
+#empty-moon {
+  font-size: 20px;
+}
+
+#solid-moon {
+  display: none;
+}
+
+/* header  */
+
+/************************************/
+
+/* main */
+
+.main {
+  padding: 40px 70px 0;
+}
+
+.input-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-wrap {
+  position: relative;
+  width: 35%;
+}
+
+#search-input {
+  width: 100%;
+  padding: 20px 20px 20px 60px;
+  border: none;
+  background-color: #ffffff;
+  letter-spacing: 2px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  color: #1e201f;
+  box-shadow: rgb(0 0 0 / 3%) 0px 2px 4px 4px;
+  border-radius: 3px;
+}
+
+.search-wrap i {
+  position: absolute;
+  color: #b5b5b5;
+  top: 18px;
+  left: 25px;
+}
+
+.dropdown-wrap {
+  width: 15%;
+}
+
+#dropdown {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  letter-spacing: 1px;
+  padding: 20px 20px 20px 20px;
+  font-weight: 600;
+  background-color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  box-shadow: rgb(0 0 0 / 3%) 0px 2px 4px 4px;
+  border: none;
+  cursor: pointer;
+  color: #1e201f;
+  border-radius: 3px;
+}
+
+#search-input:focus,
+#dropdown:focus {
+  outline: none;
+}
+
+#dropdown-item {
+  margin-top: 3px;
+  border-radius: 3px;
+  visibility: hidden;
+}
+
+#dropdown-item.showListItem {
+  visibility: visible;
+}
+
+#dropdown-item li {
+  list-style-type: none;
+  color: #1e201f;
+  font-weight: 600;
+  padding: 10px 20px 10px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+#dropdown-item li:hover {
+  background-color: #ebebeb;
+}
+
+/* main */
+
+/************************************/
+
+/* responsive */
+
+@media all and (max-width: 900px) {
+  .mode,
+  #dropdown,
+  #dropdown-item li {
+    cursor: default;
+  }
+}
