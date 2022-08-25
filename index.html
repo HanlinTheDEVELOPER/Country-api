@@ -1,13 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country API</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search engine" />
+    <meta
+      name="keywords"
+      content="Search the details of all countries that exist in our world and gain knowledge"
+    />
+    <meta
+      name="author"
+      content="Han Lin Aung / Khant Min Thu / Aung Khant Hein / Kaung Khant Maung / Win Win Htet / Su Myat Aung"
+    />
+
+    <title>Countries</title>
+
+    <!--css link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+    <!-- fontsawrsome kit  -->
+    <script
+      src="https://kit.fontawesome.com/9f5c644af7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- fonts link  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header  -->
+      <div class="header">
+        <h2>Where in the world?</h2>
+        <div class="mode">
+          <i class="fa-regular fa-moon" id="empty-moon"></i>
+          <i class="fa-solid fa-moon" id="solid-moon"></i>
+          <h3>Dark Mode</h3>
+        </div>
+      </div>
+      <!-- header  -->
+
+      <!-------------------------------------------->
+
+      <div class="main">
+        <!---------------->
+        <div class="input-wrap">
+          <div class="search-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              placeholder="Search for a country..."
+              id="search-input"
+            />
+          </div>
+          <div class="dropdown-wrap">
+            <button id="dropdown">
+              Filter by Region...
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul id="dropdown-item">
+              <li id="Africa">Africa</li>
+              <li id="America">America</li>
+              <li id="Asia">Asia</li>
+              <li id="Europe">Europe</li>
+              <li id="Oceania">Oceania</li>
+            </ul>
+          </div>
+        </div>
+        <!---------------->
+
+        <div id="countries-box">
+          <div>
+            <img src="https://flagcdn.com/w320/fi.png" alt="flag" />
+            <h2>Finland</h2>
+            <h3>Population: <span>812,345.78.9662</span></h3>
+            <h3>Region: <span>Europe</span></h3>
+            <h3>Capital: <span>New York</span></h3>
+          </div>
+
+          <div>
+            <img src="https://flagcdn.com/w320/fi.png" alt="flag" />
+            <h2>Finland</h2>
+            <h3>Population: <span>812,345.78.9662</span></h3>
+            <h3>Region: <span>Europe</span></h3>
+            <h3>Capital: <span>New York</span></h3>
+          </div>
+
+          <div>
+            <img src="https://flagcdn.com/w320/fi.png" alt="flag" />
+            <h2>Finland</h2>
+            <h3>Population: <span>812,345.78.9662</span></h3>
+            <h3>Region: <span>Europe</span></h3>
+            <h3>Capital: <span>New York</span></h3>
+          </div>
+
+          <div>
+            <img src="https://flagcdn.com/w320/fi.png" alt="flag" />
+            <h2>Finland</h2>
+            <h3>Population: <span>812,345.78.9662</span></h3>
+            <h3>Region: <span>Europe</span></h3>
+            <h3>Capital: <span>New York</span></h3>
+          </div>
+        </div>
+      </div>
+
+      <!---------------->
+
+      <div class="selection">
+        <button><i class="fa-solid fa-arrow-left"></i> BACK</button>
+        <div id="selection-box">
+          <img src="https://flagcdn.com/w320/tt.png" alt="flag" />
+          <div class="info">
+            <div class="first-info">
+              <div class="first-col">
+                <h1>Belgium</h1>
+                <h3>Native name: <span>Beligi</span></h3>
+                <h3>Population: <span>812,345.78.9662</span></h3>
+                <h3>Region: <span>Europe</span></h3>
+                <h3>Sub Region: <span>Western Europe</span></h3>
+                <h3>Capital: <span>New York</span></h3>
+              </div>
+              <div class="second-col">
+                <h3>Top Level Domain: <span>be</span></h3>
+                <h3>Currencies: <span>Euro</span></h3>
+                <h3>Language: <span>French, German</span></h3>
+              </div>
+            </div>
+            <div class="second-info">
+              <h3>Border Countries:</h3>
+              <a href="#">USA</a>
+              <a href="#">UAE</a>
+              <a href="#">HTO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!---------------->
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
