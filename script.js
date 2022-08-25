@@ -10,6 +10,12 @@ const mode = document.getElementsByClassName("mode")[0];
 const emptyMoon = document.getElementById("empty-moon");
 const solidMoon = document.getElementById("solid-moon"); // display-none in default
 
+// DOM Element for displaying fetch data
+const countriesBox = document.getElementById("countries-box");
+
+//  DOM Element for search
+const searchInput = document.getElementById("search-input");
+
 //  DOM Element for Filtering region
 const africa = document.getElementById("Africa");
 const america = document.getElementById("America");
@@ -17,5 +23,6 @@ const asia = document.getElementById("Asia");
 const europe = document.getElementById("Europe");
 const oceania = document.getElementById("Oceania");
 
-//  DOM Element for search
-const searchInput = document.getElementById("search-input");
+//  DOM Element for detail info display
+const main = document.getElementsByClassName("main")[0];
+const selection = document.getElementsByClassName("selection")[0]; // display none in default
