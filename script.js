@@ -26,3 +26,17 @@ const oceania = document.getElementById("Oceania");
 //  DOM Element for detail info display
 const main = document.getElementsByClassName("main")[0];
 const selection = document.getElementsByClassName("selection")[0]; // display none in default
+
+///// Player2 Starts From Here.
+// Fetch All Data
+const api = "https://restcountries.com/v3.1/all";
+fetch(api)
+  .then(response => response.json())
+  .then(data => getData(data));
+
+// getData with functions from this getData function
+function getData(data) {
+
+}
+
+///// Player2 Ends Here.
