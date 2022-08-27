@@ -31,7 +31,7 @@ const selection = document.getElementsByClassName("selection")[0]; // display no
 ///// Player2 Starts From Here. /////////////////
 // Fetch All Data
 const api = "https://restcountries.com/v3.1/all";
-let a = [];
+
 fetch(api)
   .then(response => response.json())
   .then(data => getData(data));
@@ -44,9 +44,10 @@ function getData(data) {
 // display countries
 function displayCountries(countries) {
   for(let country of countries) {
+    console.log(country);
       countriesBox.insertAdjacentHTML("beforeend",
       `<div class="country">
-        <img src="${country.flags.png}" alt="flag" />
+        <a href="./detail.html?name=${generateName(country)}"><img src="${country.flags.png}" alt="flag" /></a>
         <h2>${country.name.common}</h2>
         <h3>Population: <span>${country.population}</span></h3>
         <h3>Region: <span>${country.region}</span></h3>
@@ -55,5 +56,10 @@ function displayCountries(countries) {
   }
   countriesBox.style.visibility = "visible";
   loadingWrapper.remove();
+}
+
+function generateName(country) {
+  let search = [country.cca2, country.cca3, country.ccn3, country.cioc];
+  return search;
 }
 ///// Player2 Ends Here. /////////////////
