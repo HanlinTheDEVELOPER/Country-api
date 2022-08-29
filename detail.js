@@ -8,13 +8,12 @@ fetch(`https://restcountries.com/v3.1/alpha?codes=${countryName}`)
   .then((country) => displayCountry(country[0]));
 
 function displayCountry(country) {
+  document.title = country.name.common;
   countryDetails.insertAdjacentHTML(
     "beforeend",
     `
     <div class="selection">
-    <button onclick="window.history.go(${getSessionStorage(
-      "History"
-    )}); return false;"><i class="fa-solid fa-arrow-left"></i> BACK</button>
+    <button onclick="backFunc()"><i class="fa-solid fa-arrow-left"></i> BACK</button>
     <div id="selection-box">
       <img src="${country.flags.svg}" alt="${country.name.common}" />
       <div class="info">
@@ -49,6 +48,16 @@ function displayCountry(country) {
     `
   );
   loadingWrapper.remove();
+}
+
+function backFunc() {
+  if(getSessionStorage("History") < 0) {
+    window.history.go(getSessionStorage(
+      "History"
+    )); return false;
+  } else {
+    window.location.assign("./index.html")
+  }
 }
 
 function getSessionStorage(key) {
