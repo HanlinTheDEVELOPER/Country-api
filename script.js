@@ -47,7 +47,7 @@ function displayCountries(countries) {
     console.log(country);
       countriesBox.insertAdjacentHTML("beforeend",
       `<div class="country">
-        <a href="./detail.html?name=${generateName(country)}"><img src="${country.flags.png}" alt="flag" /></a>
+        <a href="./detail.html?name=${generateName(country)}" onclick="setHistory()"><img src="${country.flags.png}" alt="flag" /></a>
         <h2>${country.name.common}</h2>
         <h3>Population: <span>${country.population}</span></h3>
         <h3>Region: <span>${country.region}</span></h3>
@@ -61,5 +61,9 @@ function displayCountries(countries) {
 function generateName(country) {
   let search = [country.cca2, country.cca3, country.ccn3, country.cioc];
   return search;
+}
+
+function setHistory() {
+  sessionStorage.setItem("History", -1);
 }
 ///// Player2 Ends Here. /////////////////
