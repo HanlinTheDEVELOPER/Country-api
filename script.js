@@ -69,3 +69,24 @@ const america = document.getElementById("America");
 const asia = document.getElementById("Asia");
 const europe = document.getElementById("Europe");
 const oceania = document.getElementById("Oceania");
+
+//player 6 start from here
+
+const region = document.querySelectorAll(".region");
+const regionName = document.getElementsByClassName("regionName");
+
+region.forEach(element=>{
+  element.addEventListener("click",function(){
+    // console.log(element.innerText)
+    // console.log(Array.from(regionName))
+
+    Array.from(regionName).forEach(el=>{
+      if(el.innerText.includes(element.innerText)){
+        el.parentElement.style.display = "grid";
+      }else{
+        el.parentElement.style.display = "none"
+      }
+    })
+  })
+})
+//player 6 end from here
