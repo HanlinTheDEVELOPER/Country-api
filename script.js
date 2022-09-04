@@ -39,7 +39,7 @@ function displayCountries(countries) {
       }" alt="flag" /></a>
         <h2>${country.name.common}</h2>
         <h3>Population: <span>${country.population}</span></h3>
-        <h3>Region: <span>${country.region}</span></h3>
+        <h3 class="regionName">Region: <span>${country.region}</span></h3>
         <h3>Capital: <span>${country.capital}</span></h3>
       </div>`
     );
