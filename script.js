@@ -75,7 +75,7 @@ searchInput.addEventListener("keyup", () => {
   });
 });
 
-/////////////// Player Ends Here ///////////////////
+/////////////// Player 1 Ends Here ///////////////////
 
 //  DOM Element for Filtering region
 const africa = document.getElementById("Africa");
