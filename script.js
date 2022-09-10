@@ -39,7 +39,7 @@ function displayCountries(countries) {
       }" alt="flag" /></a>
         <h2>${country.name.common}</h2>
         <h3>Population: <span>${country.population}</span></h3>
-        <h3>Region: <span>${country.region}</span></h3>
+        <h3 class="regionName">Region: <span>${country.region}</span></h3>
         <h3>Capital: <span>${country.capital}</span></h3>
       </div>`
     );
@@ -69,3 +69,24 @@ const america = document.getElementById("America");
 const asia = document.getElementById("Asia");
 const europe = document.getElementById("Europe");
 const oceania = document.getElementById("Oceania");
+
+//player 6 start from here
+
+const region = document.querySelectorAll(".region");
+const regionName = document.getElementsByClassName("regionName");
+
+region.forEach(element=>{
+  element.addEventListener("click",function(){
+    // console.log(element.innerText)
+    // console.log(Array.from(regionName))
+
+    Array.from(regionName).forEach(el=>{
+      if(el.innerText.includes(element.innerText)){
+        el.parentElement.style.display = "grid";
+      }else{
+        el.parentElement.style.display = "none"
+      }
+    })
+  })
+})
+//player 6 end from here
