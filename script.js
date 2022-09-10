@@ -20,8 +20,8 @@ const loadingWrapper = document.getElementsByClassName("loadingWrapper")[0];
 const api = "https://restcountries.com/v3.1/all";
 
 fetch(api)
-  .then((response) => response.json())
-  .then((data) => getData(data));
+  .then(response => response.json())
+  .then(data => getData(data));
 
 // getData with functions from this getData function
 function getData(data) {
@@ -37,7 +37,7 @@ function displayCountries(countries) {
         <a href="./detail.html?name=${generateName(country)}"><img src="${
         country.flags.png
       }" alt="flag" /></a>
-        <h2>${country.name.common}</h2>
+        <h2 class="countryName">${country.name.common}</h2>
         <h3>Population: <span>${country.population}</span></h3>
         <h3 class="regionName">Region: <span>${country.region}</span></h3>
         <h3>Capital: <span>${country.capital}</span></h3>
@@ -61,7 +61,21 @@ const emptyMoon = document.getElementById("empty-moon");
 const solidMoon = document.getElementById("solid-moon");
 
 //  DOM Element for search
+/////////// Player 1 Starts From Here ///////////
+
 const searchInput = document.getElementById("search-input");
+
+const countryName = document.getElementsByClassName("countryName");
+searchInput.addEventListener("keyup", () => {
+  let text = searchInput.value.toLowerCase();
+  Array.from(countryName).forEach(el => {
+    el.innerText.toLowerCase().includes(text)
+      ? (el.parentElement.style.display = "grid")
+      : (el.parentElement.style.display = "none");
+  });
+});
+
+/////////////// Player 1 Ends Here ///////////////////
 
 //  DOM Element for Filtering region
 const africa = document.getElementById("Africa");
