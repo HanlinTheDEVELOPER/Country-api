@@ -1,3 +1,4 @@
+
 // dropdown
 const dropdownBtn = document.getElementById("dropdown");
 const dropdownItem = document.getElementById("dropdown-item");
@@ -28,7 +29,9 @@ const oceania = document.getElementById("Oceania");
 const main = document.getElementsByClassName("main")[0];
 const selection = document.getElementsByClassName("selection")[0]; // display none in default
 
+
 ///// Player2 Starts From Here. /////////////////
+
 // Fetch All Data
 const api = "https://restcountries.com/v3.1/all";
 
@@ -44,7 +47,6 @@ function getData(data) {
 // display countries
 function displayCountries(countries) {
   for(let country of countries) {
-    console.log(country);
       countriesBox.insertAdjacentHTML("beforeend",
       `<div class="country">
         <a href="./detail.html?name=${generateName(country)}" onclick="setHistory()"><img src="${country.flags.png}" alt="flag" /></a>
@@ -66,4 +68,41 @@ function generateName(country) {
 function setHistory() {
   sessionStorage.setItem("History", -1);
 }
+
 ///// Player2 Ends Here. /////////////////
+
+/////////// Player 1 Starts From Here ///////////
+
+
+const countryName = document.getElementsByClassName("countryName");
+searchInput.addEventListener("keyup", () => {
+  let text = searchInput.value.toLowerCase();
+  Array.from(countryName).forEach(el => {
+    el.innerText.toLowerCase().includes(text)
+      ? (el.parentElement.style.display = "grid")
+      : (el.parentElement.style.display = "none");
+  });
+});
+
+/////////////// Player 1 Ends Here ///////////////////
+
+//player 6 start from here
+
+const region = document.querySelectorAll(".region");
+const regionName = document.getElementsByClassName("regionName");
+
+region.forEach(element=>{
+  element.addEventListener("click",function(){
+
+
+    Array.from(regionName).forEach(el=>{
+      if(el.innerText.includes(element.innerText)){
+        el.parentElement.style.display = "grid";
+      }else{
+        el.parentElement.style.display = "none"
+      }
+    })
+  })
+})
+//player 6 end from here
+
