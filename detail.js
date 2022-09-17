@@ -1,7 +1,6 @@
 const params = new URLSearchParams(location.search);
 const countryName = params.get("name");
 const loadingWrapper = document.getElementsByClassName("loadingWrapper")[0];
-// const flagImage = document.getElementById("flag-image");
 const countryDetails = document.getElementById("country-details");
 
 fetch(`https://restcountries.com/v3.1/alpha?codes=${countryName}`)
@@ -9,12 +8,13 @@ fetch(`https://restcountries.com/v3.1/alpha?codes=${countryName}`)
   .then((country) => displayCountry(country[0]));
 
 function displayCountry(country) {
-  // flagImage.src = country.flags.svg;
+  document.title = country.name.common;
   countryDetails.insertAdjacentHTML(
     "beforeend",
     `
     <div class="selection">
-    <a href="./index.html"><button><i class="fa-solid fa-arrow-left"></i> BACK </button></a>
+
+    <button onclick="backFunc()"><i class="fa-solid fa-arrow-left"></i> BACK</button>
     <div id="selection-box">
       <img src="${country.flags.svg}" alt="${country.name.common}" />
       <div class="info">
@@ -49,6 +49,28 @@ function displayCountry(country) {
     `
   );
   loadingWrapper.remove();
+
+}
+
+function backFunc() {
+  if(getSessionStorage("History") < 0) {
+    window.history.go(getSessionStorage(
+      "History"
+    )); return false;
+  } else {
+    window.location.assign("./index.html")
+  }
+}
+
+function getSessionStorage(key) {
+  return sessionStorage.getItem(key);
+}
+
+function setSessionStorage(key) {
+  if (key == "History") {
+    let prev = sessionStorage.getItem("History");
+    window.sessionStorage.setItem("History", --prev);
+  }
 }
 
 function generateNativeName(nativeName) {
@@ -79,7 +101,9 @@ function generateBorderCountries(borders) {
   let borderButtons = "";
   for (let border of borders) {
     borderButtons += `
-        <a href="./detail.html?name=${border}">${border}</a>
+
+        <a href="./detail.html?name=${border}" onclick="setSessionStorage('History')">${border}</a>
+
         `;
   }
   return borderButtons;
