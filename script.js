@@ -98,7 +98,9 @@ region.forEach(element=>{
     Array.from(regionName).forEach(el=>{
       if(el.innerText.includes(element.innerText)){
         el.parentElement.style.display = "grid";
-      }else{
+      } else if(element.innerText === "All") {
+        el.parentElement.style.display  = "grid";
+      } else {
         el.parentElement.style.display = "none"
       }
     })
