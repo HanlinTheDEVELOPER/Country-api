@@ -19,7 +19,7 @@
 
 # Team projects  ( 6 members of developer )
 
-- **[HanlinTheDEVELOPER](https://www.github.com/HanlinTheDEVELOPER)**
+- **[Han Lin](https://www.github.com/HanlinTheDEVELOPER)**
 
 - **[Aung Khant Hein](https://www.github.com/AungKhantHein314)**
 
@@ -29,7 +29,7 @@
 
 - **[Win Win Htet](https://www.github.com/Win-maker)**
 
-- **[sumyat-aung](https://www.github.com/sumyat-aung)**
+- **[Su Myat Aung](https://www.github.com/sumyat-aung)**
 
 
 
