@@ -13,6 +13,9 @@
 
 ![image](https://user-images.githubusercontent.com/108873224/194704152-1d510bbc-dc36-42f9-91b4-dd6e12937033.png)
 
+<br/>
+
+![image](https://user-images.githubusercontent.com/108873224/194704194-d2c14d9f-4b07-4fac-bcd5-1b078fbf22b6.png)
 
 
 ## Built With
@@ -35,5 +38,9 @@
 
 - **[Su Myat Aung](https://www.github.com/sumyat-aung)**
 
+## Features 
 
+- **Search by country name**
+- **Filter out with Region**
+- **Details to each country**
 
